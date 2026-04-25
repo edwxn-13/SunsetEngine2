@@ -1,9 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/Users/plus/programming/SunsetEngine/build/cmake_install.cmake",
-		"/Users/plus/programming/SunsetEngine/build/Engine/cmake_install.cmake",
-		"/Users/plus/programming/SunsetEngine/build/Engine/src/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
