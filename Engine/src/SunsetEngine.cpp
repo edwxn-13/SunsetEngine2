@@ -1,4 +1,4 @@
-#include <GL/gl3w.h>
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include "Engine/EngineUtils.h"
@@ -20,11 +20,15 @@ void EngineLaunch()
 {
 	glfwInit();
 	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Sunset Engine v1.10", NULL, NULL);
-	glfwMakeContextCurrent(window);
+	glfwMakeContextCurrent( window );
+  if(!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress)){
+    std::cerr << "failedddd \n";
+    glfwTerminate();
+  }
 	Screen::setScreenXY(WIDTH, HEIGHT);
 	Input::updateWindowValue(window);
 	glfwSetWindowSizeCallback(window, SizeCallback);
-	gl3wInit();
+
 	glEnable(GL_DEBUG_OUTPUT);
 	glDebugMessageCallback(DebguMessageCallback, 0);
 	Engine engine = Engine(window);

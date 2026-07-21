@@ -1,13 +1,15 @@
 #pragma once
 
 #include <string>
+#include <glad/glad.h>
+#include <vector>
 class SCamera;
 
 #define WIDTH 1024
 #define HEIGHT 768
 
-float skyboxVerts[];
-unsigned int skyboxIndicies[];
+float skyboxVerts[6];
+unsigned int skyboxIndicies[12];
 
 unsigned int TextureFromFile(const char* path, const std::string& directory, bool gamma = false);
 

@@ -2,11 +2,9 @@
 #define BITMAP_H
 
 #include <stdio.h>
-#include <windows.h>
-#include <wingdi.h>
 
 
-GLuint savebitmap(const char* filename, 
+unsigned int savebitmap(const char* filename, 
 	unsigned char* pixelBuffer, 
 	BITMAPINFOHEADER* infoHeader, BITMAPFILEHEADER* fileHeader)
 {

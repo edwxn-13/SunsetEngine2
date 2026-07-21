@@ -1,5 +1,5 @@
 #include "CameraComponent.h"
-#include <GL/gl3w.h>
+#include <glad/glad.h>
 #include <iostream>
 
 #include <GLFW/glfw3.h>

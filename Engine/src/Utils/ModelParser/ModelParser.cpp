@@ -1,11 +1,8 @@
 #include "ModelParser.h"
-
-#include <GL/gl3w.h>
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
-
 #include <assimp/Importer.hpp>
 #include <assimp/postprocess.h>
-
 #include <iostream>
 #include "../texture.h"
 #include <assimp/scene.h>

@@ -1,9 +1,6 @@
 
 #include <iostream>
-
-#include <GL/glcorearb.h>
-#include <gl/GL.h>
-#include <GL/gl3w.h>
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>

@@ -1,8 +1,7 @@
 #include "PlanetNode.h"
 #include "../PlanetRenderer.h"
 #include "../../../Camera/camera.h"
-
-#include <GL/gl3w.h>
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -210,16 +209,16 @@ void NodeManager::setupNodes(const std::vector<p_vert>& m_verts)
 	}
 
 	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, FALSE, sizeof(p_vert), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(p_vert), (void*)0);
 
 	glEnableVertexAttribArray(1);
-	glVertexAttribPointer(1, 3, GL_FLOAT, FALSE, sizeof(p_vert), (void*)offsetof(p_vert, normal));
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(p_vert), (void*)offsetof(p_vert, normal));
 
 	glEnableVertexAttribArray(2);
-	glVertexAttribPointer(2, 3, GL_FLOAT, FALSE, sizeof(p_vert), (void*)offsetof(p_vert, tc));
+	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(p_vert), (void*)offsetof(p_vert, tc));
 
 	glEnableVertexAttribArray(3);
-	glVertexAttribPointer(3, 3, GL_FLOAT, FALSE, sizeof(p_vert), (void*)offsetof(p_vert, colour));
+	glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(p_vert), (void*)offsetof(p_vert, colour));
 
 	glBindVertexArray(0);
 

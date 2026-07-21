@@ -7,7 +7,13 @@ class SCamera : public EngineObject
 	static SCamera* p_camera; //Primary Cam
 
 public:
-	enum Camera_Movement;
+	enum Camera_Movement 
+{
+	FORWARD,
+	BACKWARD,
+	LEFT,
+	RIGHT
+};
 
 	SCamera(Scene* s);
 	float radz(float deg);

@@ -10,7 +10,7 @@
 #include "../../EngineObjects/EngineObject.h"
 #include "../../Camera/camera.h"
 #include <iostream>
-#include <GL/gl3w.h>
+#include <glad/glad.h>
 #include <glm/gtc/type_ptr.hpp>
 #include "../EngineUtils.h"
 #include "../../Utils/texture.h"

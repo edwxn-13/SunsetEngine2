@@ -1,7 +1,7 @@
 #include "ShaderManager.h"
 
 #include "../../../Utils/shader.h"
-#include <GL/gl3w.h>
+#include <glad/glad.h>
 #include <glm/gtc/type_ptr.hpp>
 #include "../../../Utils/file.h"
 
@@ -39,7 +39,7 @@ void SunsetShader::createGeometryShader(const char* name)
 
 	geometry_program = glCreateShader(GL_GEOMETRY_SHADER);
 	char* geomSource = read_file(name);
-	glShaderSource(geometry_program, 1, &geomSource, NULL);
+	glShaderSource(geometry_program, 1, &name, NULL);
 	glCompileShader(geometry_program);
 
 	glGetShaderiv(geometry_program, GL_COMPILE_STATUS, &success);

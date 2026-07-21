@@ -8,7 +8,6 @@
 #include <vector>
 #include "file.h"
 #include <string> 
-#include <GL/glcorearb.h>
 
 using namespace std;
 
@@ -113,9 +112,9 @@ public:
 
 	vector<triangle> tris;
 	Material mtl;
-	GLuint texture;
-	GLuint specular;
-	GLuint bump;
+	unsigned int texture;
+	unsigned int specular;
+	unsigned int bump;
 
 	Object() {}
 	Object(Material m)
@@ -273,7 +272,7 @@ int mtl_parse(char* filename, vector<Material>* mtls)
 	while (getline(file, line))
 	{
 		const char* lineChar = line.c_str();
-		char* temp = _strdup(lineChar);
+		char* temp = strdup(lineChar);
 		char* token;
 
 
@@ -478,20 +477,20 @@ int mtl_parse(char* filename, vector<Material>* mtls)
 	{
 		string image_dir = root_dir + image_names[i];
 		const char* imagepath = image_dir.c_str();
-		char* tempimage = _strdup(imagepath);
+		char* tempimage = strdup(imagepath);
 
 
 		string spec_dir = root_dir + spec_names[i];
 		const char* specpath = spec_dir.c_str();
-		char* tempspec = _strdup(specpath);
+		char* tempspec = strdup(specpath);
 
 		string bump_dir = root_dir + bump_names[i];
 		const char* bumppath = bump_dir.c_str();
-		char* tempbump = _strdup(bumppath);
+		char* tempbump = strdup(bumppath);
 
 
 		const char* shader_name = material_names[i].c_str();
-		char* tempshade = _strdup(shader_name);
+		char* tempshade = strdup(shader_name);
 
 		char* matname = mtls[0][i].mtl_name;
 		mtls[0][i] = Material(matname,tempimage,tempspec,tempbump, tempshade);
@@ -501,7 +500,7 @@ int mtl_parse(char* filename, vector<Material>* mtls)
 
 string getRootDirectory(const char* filename) 
 {
-	const char* temp = _strdup(filename);
+	const char* temp = strdup(filename);
 
 	string root = temp;
 
@@ -541,7 +540,7 @@ int obj_parse(const char * filename, vector<Object> *objs)
 		//Output the text from the file
 
 		const char* lineChar = line.c_str();
-		char* temp = _strdup(lineChar);
+		char* temp = strdup(lineChar);
 		char* token;
 
 
@@ -638,14 +637,14 @@ int obj_parse(const char * filename, vector<Object> *objs)
 				{
 					continue;
 				}
-				char* copy = _strdup(token);
+				char* copy = strdup(token);
 				strings.push_back(copy);
 			}
 
 			for (size_t i = 0; i < strings.size(); i++)
 			{
 				const char* triangleMap = strings[i].c_str();
-				char* trigMap = _strdup(triangleMap);
+				char* trigMap = strdup(triangleMap);
 				vs temp = parse_triangle(trigMap);
 				if (temp.x < 1) { temp.x = 1; }
 				if (temp.y < 1) { temp.y = 1; }
@@ -672,12 +671,12 @@ int obj_parse(const char * filename, vector<Object> *objs)
 
 	const char* temp_material_dir = material_dir.c_str();
 
-	char* char_material_dir = _strdup(temp_material_dir);
+	char* char_material_dir = strdup(temp_material_dir);
 
 	for (size_t i = 0; i < material_ids.size(); i++)
 	{
 		const char* temp = material_ids[i].c_str();
-		char* material_name_id = _strdup(temp);
+		char* material_name_id = strdup(temp);
 		materials.push_back(Material(material_name_id, char_material_dir, char_material_dir, char_material_dir, char_material_dir));
 	}
 

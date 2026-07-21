@@ -1,7 +1,6 @@
 #include "MeshRenderer.h"
-#include <GL/glcorearb.h>
 #include <glm/gtc/type_ptr.hpp>
-#include <GL/gl3w.h>
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include "../../EngineObjects/EngineObject.h"
 

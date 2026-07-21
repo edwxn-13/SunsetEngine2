@@ -1,5 +1,5 @@
 #include "shader.h"
-#include <GL/gl3w.h>
+#include <glad/glad.h>
 #include "file.h"
 #include <cstdio>
 #include <stdio.h>

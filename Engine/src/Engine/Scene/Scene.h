@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include <GL/gl3w.h>
+#include <glad/glad.h>
 #include "../../Utils/texture.h"
 #include "../../Maths/MathHeader.h"
 #include "../../Maths/Vector3d.h"

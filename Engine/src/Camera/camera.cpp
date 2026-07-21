@@ -1,28 +1,17 @@
 
-#include <GL/gl3w.h>
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include <GL/glcorearb.h>
-#include "camera.h"
+#include <Camera/camera.h>
 #include "../Components/CameraComponent/CameraComponent.h"
 #include "../Engine/EngineUtils.h"
-#include "../Engine/Scene/Scene.h"
-
+#include <Engine/Scene/Scene.h>
 #include "../Components/Rigidbody/CollisionComponent/CollisionComponent.h"
 
 std::vector<SCamera*> SCamera::m_cam_list = {};
 SCamera * SCamera::p_camera = nullptr;
-
-enum SCamera::Camera_Movement
-{
-	FORWARD,
-	BACKWARD,
-	LEFT,
-	RIGHT
-};
-
 SCamera::SCamera(Scene * s) : EngineObject(s)
 {
 	m_cam_list.push_back(this);

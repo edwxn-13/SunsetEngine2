@@ -1,13 +1,16 @@
 #pragma once
-
+#include <assimp/scene.h>
+#include <assimp/mesh.h>
+#include <assimp/material.h>
+#include <assimp/postprocess.h>
 #include "../../Maths/MathHeader.h"
 #include "../../Engine/Renderer/ShaderManager/ShaderManager.h"
 
-struct aiNode;
-struct aiScene;
-struct aiMaterial;
-enum aiTextureType;
-struct aiMesh;
+//truct aiNode;
+//struct aiScene;
+//struct aiMaterial;
+//enum aiTextureType;
+//struct aiMesh;
 
 #include <vector>
 #include <string>
